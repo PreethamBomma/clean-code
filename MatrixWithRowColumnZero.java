@@ -4,13 +4,10 @@
 	Descriptive names
 	Brief description for all functions about what they do and the parameters they accept
 	Less number of function arguments ( Max 2 )
-    Atmost one return statement
+        Atmost one return statement
 	Space complexity - O(M x N)
 	where M = number of rows
-		  N = number of columns
-
-
-
+              N = number of columns
 */
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -36,12 +33,12 @@ public class MatrixWithRowColumnZero {
 	 
 	 /**
 	  *	reads values entered by user
-      *
-	  * @param numberOfRows
-      *
+          *
+	  *     @param numberOfRows
+          *
 	  *	@param numberOfColums
 	  *
-	 */
+	  */
 
 	 public static void readMatrixValues(int numberOfRows, int numberOfColumns){
 	 matrix = new int[numberOfRows][numberOfColumns];
@@ -51,32 +48,30 @@ public class MatrixWithRowColumnZero {
 	 	}
 	 }
 	 checkAndStoreZeroes();
-    }
+         }
 
-    /**
-     *
-	 *	checks for zeroes in the matrix and stores the index where an zero occurs
-     *
-    */
+       /**
+	*     checks for zeroes in the matrix and stores the index where an zero occurs
+        */
 
 
-    public static void checkAndStoreZeroes(){
+        public static void checkAndStoreZeroes(){
 
-    for(i = 0; i< numberOfRows; i++){
+        for(i = 0; i< numberOfRows; i++){
     	for(j = 0;j< numberOfColumns; j++){
     		if(matrix[i][j] == 0){
     			rowIndex += i;
     			columnIndex += j;
     		}
     	}
-    }
-    parseStoredIndexesOfZero();
-    displayResultMatrix();
-    }
+        }
+       parseStoredIndexesOfZero();
+       displayResultMatrix();
+       }
 
    /**
-	*  parses the stored indexes where zero occurs 
-   */
+    *  parses the stored indexes where zero occurs 
+    */
 
 	public static void parseStoredIndexesOfZero(){
 		for(i = 0; i < rowIndex.length(); i++){
@@ -87,31 +82,31 @@ public class MatrixWithRowColumnZero {
 
 	/**
 	 *  changes the entire row and entire column to zero
-     *
+         *
 	 *	@param rowNumber 
 	 *		   rowNumber where an zero occurred
-     *
+         *
 	 *	@param columnNumber
-	 *			columnNumber where an zero occurred		   	
-     *
+	 *       	columnNumber where an zero occurred		   	
+         *
 	*/
 
 
-    public static void changeValueToZero(int rowNumber, int columnNumber){
+        public static void changeValueToZero(int rowNumber, int columnNumber){
 
-    System.out.println("makeZero "+ rowNumber + " "+ columnNumber);
-    for(i = 0; i < numberOfColumns; i++){
+        System.out.println("makeZero "+ rowNumber + " "+ columnNumber);
+        for(i = 0; i < numberOfColumns; i++){
     	matrix[rowNumber][i] = 0;
-    }
-    for(j = 0; j < numberOfRows; j++){
+        }
+       for(j = 0; j < numberOfRows; j++){
     	matrix[j][columnNumber] = 0;
-    }
+       }
 
-    }
+      }
 
     /**
-	  *	displays the result matrix, after corresponding rows and columns are changed to zeroes
-    */
+     *	   displays the result matrix, after corresponding rows and columns are changed to zeroes
+     */
 
     public static void displayResultMatrix(){
 
